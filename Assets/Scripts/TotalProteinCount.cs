@@ -5,30 +5,19 @@ using UnityEngine.UI;
 
 public class TotalProteinCount : MonoBehaviour
 {
-    public int totalProtein;
+    private int totalProtein;
 
-    [SerializeField] Text totalProteinDisplay;
-
-    [SerializeField] int increaseCount;
-
-    // Start is called before the first frame update
-    private void OnEnable()
+    public int GetTotalProtein()
     {
-        PackClickStates.MouseDowned += IncreaseTotalProtein;
+        return totalProtein;
     }
-    private void OnDisable()
+    public void IncreaseTotalProtein(int IncreaseCount)
     {
-        PackClickStates.MouseDowned -= IncreaseTotalProtein;
+        totalProtein += IncreaseCount;
+    }
+    public void DecreaseTotalProtein(int DecreaseCount)
+    {
+        totalProtein -= DecreaseCount;
     }
 
-    private void IncreaseTotalProtein()
-    {
-        totalProtein += increaseCount;
-    }
-    private void Update()
-    {
-        totalProteinDisplay.text = totalProtein.ToString();
-
-        print(totalProtein);
-    }
 }
