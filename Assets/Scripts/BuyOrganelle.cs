@@ -39,6 +39,11 @@ public class BuyOrganelle : MonoBehaviour
 
             DecraseTotalProtein();
         }
+
+       else
+        {
+            print("you can not purchase organelle!");
+        }
     }
 
     private void DecraseTotalProtein()
