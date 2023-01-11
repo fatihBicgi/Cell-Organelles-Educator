@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClickButton : MonoBehaviour
+public class BuyOrganelle : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     [SerializeField] protected private List<GameObject> squareList = new List<GameObject>();
 
     private TotalProteinCount totalProteinCount;
 
-    private int proteinBuyCount = 50;
+    private int proteinPurchaseValue = 50;
 
-    protected int currentCount = 0;
+    protected int currentOrganelleCount = 0;
 
     int maxIndex=0;
 
@@ -31,21 +29,20 @@ public class ClickButton : MonoBehaviour
         maxIndex= maxIndexCount;
     }
     
-    public void GameObjectActive()
-    {
-        
-
-       if(totalProteinCount.GetTotalProtein() >= proteinBuyCount && currentCount < maxIndex)
+    public void BuyOrganelleButton()
+    {      
+       if(totalProteinCount.GetTotalProtein() >= proteinPurchaseValue && currentOrganelleCount < maxIndex)
         {
-            squareList[currentCount].SetActive(true);
+            squareList[currentOrganelleCount].SetActive(true);
 
-            currentCount++;
+            currentOrganelleCount++;
 
-            totalProteinCount.DecreaseTotalProtein(proteinBuyCount);
-
-            print("ssadwqdqwd"+ totalProteinCount.GetTotalProtein() );
-
+            DecraseTotalProtein();
         }
     }
 
+    private void DecraseTotalProtein()
+    {
+        totalProteinCount.DecreaseTotalProtein(proteinPurchaseValue);
+    }
 }

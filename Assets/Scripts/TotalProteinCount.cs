@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TotalProteinCount : MonoBehaviour
 {
-    private int totalProtein;
+    private int totalProtein=50;
 
     public int GetTotalProtein()
     {

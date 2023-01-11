@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class PackClickStates : MonoBehaviour
 {
-    public static event Action MouseDowned;
+    public static event Action PackCollected;
 
     private void OnMouseDown()
     {
-        MouseDowned?.Invoke();
+        PackCollected?.Invoke();
     }
     private void OnMouseUp()
     {
