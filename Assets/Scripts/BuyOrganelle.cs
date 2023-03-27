@@ -8,9 +8,9 @@ public class BuyOrganelle : MonoBehaviour
 
     private TotalProteinCount totalProteinCount;
 
-    private int proteinPurchaseValue = 50;
+    private int organellePurchaseValue = 50;
 
-    protected int currentOrganelleCount = 0;
+    [SerializeField] protected int currentOrganelleCount = 0;
 
     int maxIndex=0;
 
@@ -31,7 +31,7 @@ public class BuyOrganelle : MonoBehaviour
     
     public void BuyOrganelleButton()
     {      
-       if(totalProteinCount.GetTotalProtein() >= proteinPurchaseValue && currentOrganelleCount < maxIndex)
+       if(totalProteinCount.GetTotalProtein() >= organellePurchaseValue && currentOrganelleCount < maxIndex)
         {
             squareList[currentOrganelleCount].SetActive(true);
 
@@ -48,6 +48,6 @@ public class BuyOrganelle : MonoBehaviour
 
     private void DecraseTotalProtein()
     {
-        totalProteinCount.DecreaseTotalProtein(proteinPurchaseValue);
+        totalProteinCount.DecreaseTotalProtein(organellePurchaseValue);
     }
 }
