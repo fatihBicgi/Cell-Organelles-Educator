@@ -13,11 +13,12 @@ public class PackClickStates : MonoBehaviour
     }
     private void OnMouseUp()
     {
-        DestroyThisGameobject();
+       
+        PackSetActiveFalse();
     }
-
-    private void DestroyThisGameobject()
+    private void PackSetActiveFalse()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
+   
 }

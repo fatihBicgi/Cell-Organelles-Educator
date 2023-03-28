@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TotalProteinCount : MonoBehaviour
 {
-    private int totalProtein=50;
+    [SerializeField] private int totalProtein=50;
 
     public int GetTotalProtein()
     {

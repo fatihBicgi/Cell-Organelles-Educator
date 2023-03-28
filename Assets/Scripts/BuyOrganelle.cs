@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BuyOrganelle : MonoBehaviour
 {
-    [SerializeField] protected private List<GameObject> squareList = new List<GameObject>();
+    [SerializeField] protected private List<GameObject> organelleList = new List<GameObject>();
 
     private TotalProteinCount totalProteinCount;
 
-    private int organellePurchaseValue = 50;
+    private readonly int organellePurchaseValue = 50;
 
     [SerializeField] protected int currentOrganelleCount = 0;
 
@@ -23,7 +23,7 @@ public class BuyOrganelle : MonoBehaviour
         foreach (Transform child in gameObject.transform)
         {
             maxIndexCount++;
-            squareList.Add(child.gameObject);
+            organelleList.Add(child.gameObject);
         }
 
         maxIndex= maxIndexCount;
@@ -33,7 +33,7 @@ public class BuyOrganelle : MonoBehaviour
     {      
        if(totalProteinCount.GetTotalProtein() >= organellePurchaseValue && currentOrganelleCount < maxIndex)
         {
-            squareList[currentOrganelleCount].SetActive(true);
+            organelleList[currentOrganelleCount].SetActive(true);
 
             currentOrganelleCount++;
 
