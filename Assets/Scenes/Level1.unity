@@ -2103,7 +2103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f872f8a74d56d4b80e5b53a170edde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  squareList: []
+  organelleList: []
   currentOrganelleCount: 0
 --- !u!4 &1628302505
 Transform:
@@ -2172,7 +2172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c77a5cd4651f7f41b7b56750aab0d3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  squareList: []
+  organelleList: []
   currentOrganelleCount: 0
 --- !u!4 &1791964350 stripped
 Transform:
