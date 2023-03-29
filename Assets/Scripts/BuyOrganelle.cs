@@ -10,7 +10,7 @@ public class BuyOrganelle : MonoBehaviour
 
     private readonly int organellePurchaseValue = 50;
 
-    [SerializeField] protected int currentOrganelleCount = 0;
+    [SerializeField] public int currentOrganelleCount = 0;
 
     int maxIndex=0;
 
