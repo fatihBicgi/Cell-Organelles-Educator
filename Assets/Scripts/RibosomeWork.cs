@@ -12,19 +12,27 @@ public class RibosomeWork : MonoBehaviour
     [SerializeField] private bool isWorking=false;
 
     private int workTime = 3;
+    //tekrar eden þeyler, enerji harcýyorsa ayný þekilde harcýyorlar deðerler bile ayný
+    //bu kod tekrarýndan kurtul
+    int energySpendValue=5;
+
+    MitokondriaWork mitokondriaWork;
 
     void Awake()
     {
         child = gameObject.transform.GetChild(7);
         box = child.gameObject;
 
-
+        mitokondriaWork = FindObjectOfType<MitokondriaWork>();
     }
 
     private void OnMouseDown()
     {
-        if ( !isWorking & isBoxDeactive())
+        if (BuyOrganelleConditions())
         {
+
+            mitokondriaWork.SetCurrentEnergy(energySpendValue);
+
             isWorking = true;
             CreatePack();
 
@@ -53,5 +61,12 @@ public class RibosomeWork : MonoBehaviour
 
         print("ribosom finished working");
         isWorking = false;
+    }
+
+    private bool BuyOrganelleConditions()
+    {
+        return           
+            !isWorking & isBoxDeactive()     
+            && mitokondriaWork.GetCurrentEnergy() >= energySpendValue;
     }
 }

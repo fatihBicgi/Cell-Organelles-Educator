@@ -8,7 +8,7 @@ public class MitokondriaWork : MonoBehaviour
     public int currentEnergy;
 	public EnergyBar energyBar;
 
-	int energyValue = 1;
+	[SerializeField] int energyValue = 2;
 
     private float MaxTime = 2f;
 
@@ -30,17 +30,31 @@ public class MitokondriaWork : MonoBehaviour
 	{
 		currentTime += Time.deltaTime;
 
-		print(currentTime);
-
 		if (MaxTime < currentTime)
 		{
 			currentTime = 0;
-			print("girdim");
-			currentEnergy += energyValue* buyMitokondria.currentOrganelleCount;
 
-			energyBar.SetEnergy(currentEnergy);
+			if(currentEnergy < 100)
+            {
+				currentEnergy += energyValue * buyMitokondria.GetCurrentOrganelleCount();
+				
+			}						
 	      
-		}	
-     
+		}		
+		if (currentEnergy > 100)
+		{
+			currentEnergy = 100;
+
+		}
+
+		energyBar.SetEnergy(currentEnergy);
 	}
+	public int GetCurrentEnergy()
+    {
+		return currentEnergy;
+    }
+	public void SetCurrentEnergy(int DecreaseEnergy)
+    {
+		currentEnergy -= DecreaseEnergy;
+    }
 }

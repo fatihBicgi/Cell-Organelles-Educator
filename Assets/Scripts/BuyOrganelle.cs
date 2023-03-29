@@ -8,15 +8,22 @@ public class BuyOrganelle : MonoBehaviour
 
     private TotalProteinCount totalProteinCount;
 
-    private readonly int organellePurchaseValue = 50;
+    protected private readonly int organellePurchaseValue = 50;
+    //tekrar eden þeyler, enerji harcýyorsa ayný þekilde harcýyorlar deðerler bile ayný
+    //bu kod tekrarýndan kurtul
+    protected private readonly int energySpendValue = 10;
 
-    [SerializeField] public int currentOrganelleCount = 0;
+    [SerializeField] protected private int currentOrganelleCount = 0;
 
-    int maxIndex=0;
+    protected int maxIndex =0;
+
+    protected private MitokondriaWork mitokondriaWork;
 
     private void Start()
     {
-        totalProteinCount = FindObjectOfType< TotalProteinCount>();       
+        mitokondriaWork = FindObjectOfType <MitokondriaWork>();
+
+        totalProteinCount = FindObjectOfType <TotalProteinCount>();       
 
         int maxIndexCount = 0;
 
@@ -30,24 +37,44 @@ public class BuyOrganelle : MonoBehaviour
     }
     
     public void BuyOrganelleButton()
-    {      
-       if(totalProteinCount.GetTotalProtein() >= organellePurchaseValue && currentOrganelleCount < maxIndex)
+    {
+        if (BuyOrganelleConditions())
         {
             organelleList[currentOrganelleCount].SetActive(true);
 
             currentOrganelleCount++;
 
             DecraseTotalProtein();
+            DecreaseEnergyForPurchase();
+
         }
 
-       else
+        else
         {
             print("you can not purchase organelle!");
         }
     }
 
-    private void DecraseTotalProtein()
+    protected private bool BuyOrganelleConditions()
+    {
+        return 
+            totalProteinCount.GetTotalProtein() >= organellePurchaseValue 
+            && currentOrganelleCount < maxIndex 
+            && mitokondriaWork.GetCurrentEnergy() >= energySpendValue;
+    }
+
+    protected private void DecreaseEnergyForPurchase()
+    {
+        mitokondriaWork.SetCurrentEnergy(energySpendValue);
+    }
+
+    protected private void DecraseTotalProtein()
     {
         totalProteinCount.DecreaseTotalProtein(organellePurchaseValue);
+    }
+
+    public int GetCurrentOrganelleCount()
+    {
+        return currentOrganelleCount;
     }
 }
