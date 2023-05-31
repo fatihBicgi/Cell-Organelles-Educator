@@ -2446,7 +2446,8 @@ MonoBehaviour:
   minEnergy: 50
   currentEnergy: 0
   energyBar: {fileID: 499668621}
-  energyValue: 5
+  energyValue: 2
+  MaxTime: 2
 --- !u!4 &1791964350 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 794490683516048299, guid: 1bf3768835029dd45aac71bb2108492d, type: 3}

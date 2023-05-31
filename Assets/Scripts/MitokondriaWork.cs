@@ -10,7 +10,7 @@ public class MitokondriaWork : MonoBehaviour
 
 	[SerializeField] int energyValue = 2;
 
-    private float MaxTime = 2f;
+	[SerializeField] private float MaxTime = 2f;
 
     private float currentTime = 0f;
 
