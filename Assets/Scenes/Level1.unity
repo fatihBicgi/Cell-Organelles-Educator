@@ -1330,7 +1330,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6278690547837638665, guid: 49dde7e112b464e48a4394a75665b840, type: 3}
       propertyPath: m_Name
-      value: chloroplast (1)
+      value: food1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49dde7e112b464e48a4394a75665b840, type: 3}
@@ -2869,7 +2869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6278690547837638665, guid: 49dde7e112b464e48a4394a75665b840, type: 3}
       propertyPath: m_Name
-      value: chloroplast
+      value: food0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49dde7e112b464e48a4394a75665b840, type: 3}

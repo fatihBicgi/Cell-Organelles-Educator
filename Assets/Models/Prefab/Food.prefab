@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3728041416127315444}
   - component: {fileID: 2940379877925330095}
   m_Layer: 0
-  m_Name: chloroplast 1
+  m_Name: Food
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
