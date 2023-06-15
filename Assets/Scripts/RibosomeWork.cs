@@ -11,10 +11,10 @@ public class RibosomeWork : MonoBehaviour
 
     [SerializeField] private bool isWorking=false;
 
-    private int workTime = 3;
+    private int workTime = 4;
     //tekrar eden þeyler, enerji harcýyorsa ayný þekilde harcýyorlar deðerler bile ayný
     //bu kod tekrarýndan kurtul
-    int energySpendValue=5;
+    int energySpendValue=10;
 
     MitokondriaWork mitokondriaWork;
 

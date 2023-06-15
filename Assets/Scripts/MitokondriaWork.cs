@@ -10,13 +10,12 @@ public class MitokondriaWork : MonoBehaviour
 
 	[SerializeField] int energyValue = 2;
 
-	[SerializeField] private float MaxTime = 2f;
+	[SerializeField] private float MaxTime = 3f;
 
     private float currentTime = 0f;
 
 	BuyMitokondria buyMitokondria;
 
-	// Start is called before the first frame update
 	void Start()
 	{
 		buyMitokondria = gameObject.GetComponent<BuyMitokondria>();
@@ -25,7 +24,6 @@ public class MitokondriaWork : MonoBehaviour
 		energyBar.SetMinEnergy(minEnergy);
 	}
 
-	// Update is called once per frame
 	void Update()
 	{
 		currentTime += Time.deltaTime;
