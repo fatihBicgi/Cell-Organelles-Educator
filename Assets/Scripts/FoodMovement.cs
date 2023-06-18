@@ -2,20 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FoodMovement : MonoBehaviour
+public class FoodMovement : ExtracellularMovement
 {
-    private float currentMoveSpeed= 1.5f;
-    private float degreesPerSecond = 180;
-     
+    private float time = 10f;
 
-    // Update is called once per frame
-    void Update()
+    void Awake()
     {
-        transform.Rotate(new Vector3(0,0 , degreesPerSecond) * Time.deltaTime);
-        TranslateForward();
+        StartCoroutine(ExampleCoroutine());
     }
-    private void TranslateForward()
+    IEnumerator ExampleCoroutine()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * currentMoveSpeed);
+        yield return new WaitForSeconds(time);
+        Destroy(gameObject);
+
     }
 }

@@ -15,17 +15,14 @@ public class PackClickStates : MonoBehaviour
     {
         mitokondriaWork = FindObjectOfType<MitokondriaWork>();
     }
-
     private void OnMouseDown()
     {
         PackCollected?.Invoke();
         DecreaseEnergy();
 
-
     }
     private void OnMouseUp()
-    {
-       
+    {  
         PackSetActiveFalse();
     }
     private void PackSetActiveFalse()
