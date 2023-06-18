@@ -1080,7 +1080,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &211826660
 PrefabInstance:
@@ -1497,7 +1497,6 @@ RectTransform:
   m_Children:
   - {fileID: 1676044854}
   - {fileID: 1678570846}
-  - {fileID: 658477153}
   m_Father: {fileID: 1304186987}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2748,7 +2747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7969212191859113033, guid: 8d84486780c7bf74da726619f9d238c1, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 7969212191859113033, guid: 8d84486780c7bf74da726619f9d238c1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2760,7 +2759,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7969212191859113033, guid: 8d84486780c7bf74da726619f9d238c1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7
+      value: -6.44
       objectReference: {fileID: 0}
     - target: {fileID: 7969212191859113033, guid: 8d84486780c7bf74da726619f9d238c1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3789,7 +3788,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &988910907
 GameObject:
@@ -3969,7 +3968,6 @@ RectTransform:
   m_Children:
   - {fileID: 63979462}
   - {fileID: 750520054}
-  - {fileID: 657124792}
   m_Father: {fileID: 1304186987}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6087,6 +6085,8 @@ MonoBehaviour:
   currentEnergy: 0
   energyBar: {fileID: 499668621}
   energyValue: 2
+  standartEnergyValue: 2
+  reducedEnergyValue: 1
   MaxTime: 3
 --- !u!4 &1791964350 stripped
 Transform:
