@@ -251,6 +251,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6401107977616404050, guid: 1bf3768835029dd45aac71bb2108492d, type: 3}
+      propertyPath: box
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bf3768835029dd45aac71bb2108492d, type: 3}
 --- !u!1001 &106004622
@@ -1706,7 +1710,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -125435165217083709, guid: 2da6362a8b9ee6e40964adc8c9e8995f, type: 3}
 --- !u!4 &939932814 stripped
@@ -2584,7 +2588,7 @@ MonoBehaviour:
   currentEnergy: 0
   energyBar: {fileID: 499668621}
   energyValue: 2
-  MaxTime: 4
+  MaxTime: 3
 --- !u!4 &1791964350 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 794490683516048299, guid: 1bf3768835029dd45aac71bb2108492d, type: 3}
@@ -2893,6 +2897,10 @@ PrefabInstance:
     - target: {fileID: 5738287564828294898, guid: 1bf3768835029dd45aac71bb2108492d, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6401107977616404050, guid: 1bf3768835029dd45aac71bb2108492d, type: 3}
+      propertyPath: box
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bf3768835029dd45aac71bb2108492d, type: 3}

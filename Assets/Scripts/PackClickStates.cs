@@ -3,18 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PackClickStates : MonoBehaviour
+public class PackClickStates : SpendEnergy
 {
     public static event Action PackCollected;
-
-    private MitokondriaWork mitokondriaWork;
-
-    private int energySpendValue=5;
-
-    private void Start()
-    {
-        mitokondriaWork = FindObjectOfType<MitokondriaWork>();
-    }
+    
     private void OnMouseDown()
     {
         PackCollected?.Invoke();
@@ -29,8 +21,5 @@ public class PackClickStates : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
-    private void DecreaseEnergy()
-    {
-        mitokondriaWork.SetCurrentEnergy(energySpendValue);
-    }
+    
 }

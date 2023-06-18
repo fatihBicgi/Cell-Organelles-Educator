@@ -9,8 +9,8 @@ public class BuyOrganelle : MonoBehaviour
     private TotalProteinCount totalProteinCount;
 
     protected private readonly int organellePurchaseValue = 50;
-    //tekrar eden þeyler, enerji harcýyorsa ayný þekilde harcýyorlar deðerler bile ayný
-    //bu kod tekrarýndan kurtul
+
+    //SpendEnergy class ýný buna da entegre et
     protected private readonly int energySpendValue = 10;
 
     [SerializeField] protected private int currentOrganelleCount = 0;

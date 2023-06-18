@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RibosomeWork : MonoBehaviour
+public class RibosomeWork : SpendEnergy
 {  
 
     private Transform child;
@@ -14,24 +14,22 @@ public class RibosomeWork : MonoBehaviour
     private int workTime = 4;
     //tekrar eden þeyler, enerji harcýyorsa ayný þekilde harcýyorlar deðerler bile ayný
     //bu kod tekrarýndan kurtul
-    int energySpendValue=10;
 
-    MitokondriaWork mitokondriaWork;
 
     void Awake()
     {
+        energySpendValue = 10;
         child = gameObject.transform.GetChild(7);
         box = child.gameObject;
 
-        mitokondriaWork = FindObjectOfType<MitokondriaWork>();
     }
 
     private void OnMouseDown()
     {
-        if (BuyOrganelleConditions())
+        if (OrganelleWorkConditions())
         {
 
-            mitokondriaWork.SetCurrentEnergy(energySpendValue);
+            DecreaseEnergy();
 
             isWorking = true;
             CreatePack();
@@ -63,7 +61,7 @@ public class RibosomeWork : MonoBehaviour
         isWorking = false;
     }
 
-    private bool BuyOrganelleConditions()
+    private bool OrganelleWorkConditions()
     {
         return           
             !isWorking & isBoxDeactive()     
