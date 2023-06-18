@@ -901,10 +901,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 152079701}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3476fea4ddae1c74f833e3b8abcb70ce, type: 3}
+  m_Script: {fileID: 11500000, guid: cd1f2e3f0f6bb984abeb135643545998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 152079703}
+  cooldownDuration: 5
 --- !u!4 &157863634 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3462930650203384849, guid: 78a040b03f1ffbe44b1e849b9349762d, type: 3}
@@ -3848,6 +3848,7 @@ GameObject:
   - component: {fileID: 988910911}
   - component: {fileID: 988910910}
   - component: {fileID: 988910909}
+  - component: {fileID: 988910912}
   m_Layer: 5
   m_Name: Mitokondria Button
   m_TagString: Untagged
@@ -3969,6 +3970,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 988910907}
   m_CullTransparentMesh: 1
+--- !u!114 &988910912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988910907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd1f2e3f0f6bb984abeb135643545998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldownDuration: 5
 --- !u!1 &991262696
 GameObject:
   m_ObjectHideFlags: 0
