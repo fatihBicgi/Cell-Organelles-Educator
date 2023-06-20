@@ -1,17 +1,36 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LysosomeWork : MonoBehaviour
 {
+   
+    
+    BuyLysosomes buyLysosomes;
 
-    //organelleList ten son indexi deaktif yap
-    //buy lisosomun yanýnda olacak bu script oradan eriþecek
-    //LysosomeWorkDone() virus öldüðünde virusun içerisinden çaðrýlacak
-
-    private void LysosomeWorkDone()
+    private void Start()
     {
-       
+        buyLysosomes = gameObject.GetComponent<BuyLysosomes>();
+    
+    }
 
+    private void OnEnable()
+    {
+        VirusClick.VirusDefeated += LysosomeDone;
+    }
+    private void OnDisable()
+    {
+        VirusClick.VirusDefeated -= LysosomeDone;
+    }
+    private void LysosomeDone()
+    {
+
+        buyLysosomes.ReduceOrganelle();
+    }
+
+    public int GetCurrentLysosomeCount()
+    {
+        return buyLysosomes.GetCurrentOrganelleCount();
     }
 }
