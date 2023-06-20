@@ -16,7 +16,6 @@ public class MitokondriaWork : MonoBehaviour
 	[SerializeField] int reducedEnergyValue = 1;
 
 	[SerializeField] private float MaxTime = 3f;
-
     private float currentTime = 0f;
 
 	BuyMitokondria buyMitokondria;
