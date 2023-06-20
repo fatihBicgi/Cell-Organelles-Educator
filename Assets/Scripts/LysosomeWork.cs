@@ -33,4 +33,5 @@ public class LysosomeWork : MonoBehaviour
     {
         return buyLysosomes.GetCurrentOrganelleCount();
     }
+    
 }
