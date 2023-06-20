@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class LysosomeWork : MonoBehaviour
 {
-   
-    
+      
     BuyLysosomes buyLysosomes;
 
     private void Start()
