@@ -13,8 +13,8 @@ public class SpendEnergy : MonoBehaviour
         mitokondriaWork = FindObjectOfType<MitokondriaWork>();
     }
 
-    public void DecreaseEnergy()
+    public void DecreaseEnergy(int EnergyValue)
     {
-        mitokondriaWork.SetCurrentEnergy(energySpendValue);
+        mitokondriaWork.SetCurrentEnergy(EnergyValue);
     }
 }

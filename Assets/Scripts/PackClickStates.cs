@@ -10,7 +10,7 @@ public class PackClickStates : SpendEnergy
     private void OnMouseDown()
     {
         PackCollected?.Invoke();
-        DecreaseEnergy();
+        DecreaseEnergy(energySpendValue);
 
     }
     private void OnMouseUp()
