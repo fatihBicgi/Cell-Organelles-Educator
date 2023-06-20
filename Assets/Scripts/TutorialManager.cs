@@ -6,6 +6,7 @@ public class TutorialManager : MonoBehaviour
     public GameObject[] tutorialPanels;
     public GameObject MitoButton;
     public GameObject RiboButton;
+    public GameObject LysoButton;
  
     public GameObject spawnMithocondria;
     public GameObject spawnRibosome;
@@ -15,7 +16,8 @@ public class TutorialManager : MonoBehaviour
     {
         tutorialPanels[currentPanelIndex].SetActive(true);
         MitoButton.SetActive(false);
-        RiboButton.SetActive(false);    
+        RiboButton.SetActive(false);
+        LysoButton.SetActive(false);
     }
 
     private void Start()
@@ -38,6 +40,7 @@ public class TutorialManager : MonoBehaviour
         {
             RiboButton.SetActive(true);
             MitoButton.SetActive(true);
+            LysoButton.SetActive(true);
             spawnMithocondria.SetActive(false);
             spawnRibosome.SetActive(false);
             if (Input.GetMouseButtonDown(0))
