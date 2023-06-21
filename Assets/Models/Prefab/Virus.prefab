@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMoveSpeed: 1
-  hitEffect: {fileID: 9183667697862532606, guid: 43038c0ccd402a742a03b26231905773, type: 3}
+  hitEffect: {fileID: 4021103657954561961, guid: 5c755f9bc5253ea418e919994537dcc7, type: 3}
 --- !u!114 &9193137921702711641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,4 +143,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 321fb80546ae7754cb6b783c7aa41b89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energySpendValue: 2
+  EnergyDecreaseValue: 2
