@@ -4,17 +4,26 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
-    [SerializeField] private GameObject foodObject;
-    [SerializeField] private Transform spawnPoint0;
-    // 8 tane spawn noktasý ekle
-    // bunlarda spawn olan objeleri randomize et
+    [SerializeField] private GameObject SpawnableObject;
+
+    [SerializeField] private List<Transform> spawnPoints = new List<Transform>();
+
+    private int lastIndex = 0;
 
     private float currentTime = 0f;
     [SerializeField] private float MaxTime = 3f;
 
     void Start()
-    {
-        
+    {        
+        int objectCount = 0;
+
+        foreach (Transform child in gameObject.transform)
+        {
+            objectCount++;
+            spawnPoints.Add(child.transform);
+        }
+
+        lastIndex = objectCount;
     }
 
     void Update()
@@ -35,6 +44,8 @@ public class Spawn : MonoBehaviour
 
     private void SpawnObject()
     {
-        GameObject foodSpawn = Instantiate(foodObject, spawnPoint0.position, spawnPoint0.rotation);
+        int randomNumber = Random.Range(0, lastIndex);
+
+        GameObject foodSpawn = Instantiate(SpawnableObject, spawnPoints[randomNumber].position, spawnPoints[randomNumber].rotation);
     }
 }
