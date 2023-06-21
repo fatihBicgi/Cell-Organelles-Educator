@@ -12,6 +12,11 @@ public class VirusMovement : ExtracellularMovement
         //bu kasýtlý yapýldý
         Effect();
         Destroy(gameObject);
+
+        if(collision.gameObject.tag== "Cell Wall")
+        {
+            print("game over");
+        }
     }
 
     private void Effect()
