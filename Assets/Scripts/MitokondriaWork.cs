@@ -51,6 +51,12 @@ public class MitokondriaWork : MonoBehaviour
             currentEnergy = 100;
 
         }
+        if (currentEnergy < 0)
+        {
+            currentEnergy = 0;
+
+        }
+
 
         IfEnergyIsHighDecreaseEnergyValue();
 
