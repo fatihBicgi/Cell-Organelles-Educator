@@ -44,11 +44,17 @@ public class MitokondriaWork : MonoBehaviour
                 currentEnergy += energyValue * buyMitokondria.GetCurrentOrganelleCount();
 
             }
+            
 
         }
         if (currentEnergy > 100)
         {
             currentEnergy = 100;
+
+        }
+        if (currentEnergy < 0)
+        {
+            currentEnergy = 0;
 
         }
 
