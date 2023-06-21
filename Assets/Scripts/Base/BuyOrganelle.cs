@@ -15,6 +15,8 @@ public class BuyOrganelle : MonoBehaviour
 
     [SerializeField] protected private int currentOrganelleCount = 0;
 
+    private int OrganelleListLastIndex;
+
     protected int maxIndex =0;
 
     protected private MitokondriaWork mitokondriaWork;
@@ -72,9 +74,31 @@ public class BuyOrganelle : MonoBehaviour
     {
         totalProteinCount.DecreaseTotalProtein(organellePurchaseValue);
     }
-
     public int GetCurrentOrganelleCount()
     {
         return currentOrganelleCount;
+    }
+
+
+    public void ReduceOrganelle()
+    {
+        if(currentOrganelleCount <=0 )
+        {
+            print("you have not enough organelle");
+        }
+
+        else
+        {
+            organelleList[GetOrganelleListLastIndex()].SetActive(false);
+
+            currentOrganelleCount--;
+        }
+        
+    }
+
+    public int GetOrganelleListLastIndex()
+    {
+        return
+              OrganelleListLastIndex = GetCurrentOrganelleCount() - 1;
     }
 }

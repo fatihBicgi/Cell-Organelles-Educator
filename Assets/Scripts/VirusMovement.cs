@@ -8,10 +8,15 @@ public class VirusMovement : ExtracellularMovement
 
     void OnCollisionEnter(Collision collision)
     {
-        
+        //baþka bir objeye deðerse de patlar
+        //bu kasýtlý yapýldý
         Effect();
-
         Destroy(gameObject);
+
+        if(collision.gameObject.tag== "Cell Wall")
+        {
+            print("game over");
+        }
     }
 
     private void Effect()

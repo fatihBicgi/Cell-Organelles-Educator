@@ -29,7 +29,7 @@ public class RibosomeWork : SpendEnergy
         if (OrganelleWorkConditions())
         {
 
-            DecreaseEnergy();
+            DecreaseEnergy(energySpendValue);
 
             isWorking = true;
             CreatePack();
