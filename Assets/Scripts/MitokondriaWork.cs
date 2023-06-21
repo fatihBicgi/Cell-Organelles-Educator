@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MitokondriaWork : MonoBehaviour
 {
-    private const int highEnergyLimit = 50; //100 üzerinden
+    private const int highEnergyLimit = 50; //100 ï¿½zerinden
 
     public int minEnergy = 0;
     public int currentEnergy;
@@ -44,6 +44,7 @@ public class MitokondriaWork : MonoBehaviour
                 currentEnergy += energyValue * buyMitokondria.GetCurrentOrganelleCount();
 
             }
+            
 
         }
         if (currentEnergy > 100)
