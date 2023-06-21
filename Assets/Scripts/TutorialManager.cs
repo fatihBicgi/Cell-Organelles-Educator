@@ -3,52 +3,65 @@ using UnityEngine;
 public class TutorialManager : MonoBehaviour
 {
     
-    public GameObject[] tutorialPanels;
-    public GameObject MitoButton;
-    public GameObject RiboButton;
-    public GameObject LysoButton;
+    public GameObject[] tutorialMessageBox;
+    public GameObject MitokondriaButton;
+    public GameObject RibosomeButton;
+    public GameObject LysosomeButton;
+    public GameObject TutorialPanel;
+    public GameObject[] SpotLights;
  
-    public GameObject spawnMithocondria;
+    public GameObject spawnMitokondria;
     public GameObject spawnRibosome;
+    public GameObject spawnLysosome;
     private int currentPanelIndex = 0;
+    private int currentLightIndex = 0;
     
     private void Awake()
     {
-        tutorialPanels[currentPanelIndex].SetActive(true);
-        MitoButton.SetActive(false);
-        RiboButton.SetActive(false);
-        LysoButton.SetActive(false);
+        tutorialMessageBox[currentPanelIndex].SetActive(true);
+        MitokondriaButton.SetActive(false);
+        RibosomeButton.SetActive(false);
+        LysosomeButton.SetActive(false);
+        Time.timeScale = 0f;
+
+
+
     }
 
     private void Start()
     {
-        Time.timeScale = 0f;
     }
 
     private void Update()
     {
-        if (currentPanelIndex <= tutorialPanels.Length - 3)   //
+        if (currentPanelIndex <= tutorialMessageBox.Length - 4)   //
         {
             if (Input.GetMouseButtonDown(0))
             {
-                tutorialPanels[currentPanelIndex].SetActive(false);
+                tutorialMessageBox[currentPanelIndex].SetActive(false);
+                SpotLights[currentLightIndex].SetActive(false);
                 currentPanelIndex++;
-                tutorialPanels[currentPanelIndex].SetActive(true);
+                currentLightIndex++;
+                tutorialMessageBox[currentPanelIndex].SetActive(true);
+                SpotLights[currentLightIndex].SetActive(true);
             }
         }
-        else if(currentPanelIndex < tutorialPanels.Length -1)
+        else if(currentPanelIndex < tutorialMessageBox.Length -1)
         {
-            RiboButton.SetActive(true);
-            MitoButton.SetActive(true);
-            LysoButton.SetActive(true);
-            spawnMithocondria.SetActive(false);
+            RibosomeButton.SetActive(true);
+            MitokondriaButton.SetActive(true);
+            LysosomeButton.SetActive(true);
+            spawnMitokondria.SetActive(false);
             spawnRibosome.SetActive(false);
+            spawnLysosome.SetActive(false);
             if (Input.GetMouseButtonDown(0))
             {
-              
-                tutorialPanels[currentPanelIndex].SetActive(false);
+                SpotLights[currentLightIndex].SetActive(false);
+                tutorialMessageBox[currentPanelIndex].SetActive(false);
                 currentPanelIndex++;
-                tutorialPanels[currentPanelIndex].SetActive(true);
+                currentLightIndex++;
+                SpotLights[currentLightIndex].SetActive(true);
+                tutorialMessageBox[currentPanelIndex].SetActive(true);
                 }
                   }
       
@@ -56,8 +69,8 @@ public class TutorialManager : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                tutorialPanels[currentPanelIndex].SetActive(false);
-               
+                tutorialMessageBox[currentPanelIndex].SetActive(false);
+                TutorialPanel.SetActive(false);
                 Time.timeScale = 1f;
                 gameObject.SetActive(false);
             }
@@ -68,7 +81,7 @@ public class TutorialManager : MonoBehaviour
 
     public void ClosePanel()
     {
-        tutorialPanels[currentPanelIndex].SetActive(false);
+        tutorialMessageBox[currentPanelIndex].SetActive(false);
         currentPanelIndex++;
     }
     
