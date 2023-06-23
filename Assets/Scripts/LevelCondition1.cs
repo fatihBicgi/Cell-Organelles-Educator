@@ -4,20 +4,33 @@ using UnityEngine;
 
 public class LevelCondition1 : MonoBehaviour
 {
-    public GameObject RibosomeBoxControl;
+  
+   
     public GameObject LysosomeControl;
     public GameObject MitokondriaControl;
     public GameObject NextPanel;
 
-    void Update()
+    private void OnEnable()
     {
-        if (RibosomeBoxControl.activeSelf && LysosomeControl.activeSelf && MitokondriaControl.activeSelf)
+        PackClickStates.PackCollected += BoxController;
+    }
+    private void OnDisable()
+    {
+        PackClickStates.PackCollected -= BoxController;
+    }
+   
+
+    private void BoxController()
+    {
+        print("kosenin amina goyum");
+        if (LysosomeControl.activeSelf && MitokondriaControl.activeSelf)
         {
+
+
             Time.timeScale = 0f;
             NextPanel.SetActive(true);
+
         }
-
     }
-
 
 }
