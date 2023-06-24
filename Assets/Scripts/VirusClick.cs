@@ -19,8 +19,13 @@ public class VirusClick : MonoBehaviour
     [SerializeField] GameObject destroyEffect;
 
 
+    IncreaseTotalProteinCount increaseTotalProteinCount;
+
+
     private void Start()
     {
+        increaseTotalProteinCount = FindObjectOfType<IncreaseTotalProteinCount>();
+
         lysosomeWork = FindObjectOfType<LysosomeWork>();       
 
         mitokondriaWork = FindObjectOfType<MitokondriaWork>();
@@ -37,6 +42,9 @@ public class VirusClick : MonoBehaviour
             if (lysosomeWork.GetCurrentLysosomeCount() > 0)
             {
                 LysosomeWorks();
+
+                increaseTotalProteinCount.IncreaseTotalProtein();
+
                 Effect();
                 Destroy(gameObject);
             }

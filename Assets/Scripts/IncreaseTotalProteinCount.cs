@@ -31,7 +31,7 @@ public class IncreaseTotalProteinCount : MonoBehaviour
         //print(totalProteinCount.GetTotalProtein());
     }
 
-    private void IncreaseTotalProtein()
+    public void IncreaseTotalProtein()
     {
         totalProteinCount.IncreaseTotalProtein(increaseCount);
     }
