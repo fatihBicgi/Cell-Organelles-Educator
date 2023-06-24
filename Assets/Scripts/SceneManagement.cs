@@ -8,12 +8,33 @@ public class SceneManagement : MonoBehaviour
 {
     public GameObject MenuPanel;
     public GameObject LevelsPanel;
+    public GameObject Menu;
+   
     // Start is called before the first frame update
 
 public void playButtonClick()
     {
         MenuPanel.SetActive(false);
         LevelsPanel.SetActive(true);
+
+    }
+    public void RetryFunction()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
+    }
+
+
+    public void GamePaused()
+    {
+        Time.timeScale = 0f;
+        Menu.SetActive(true);
+
+    }
+    public void GameResume()
+    {
+        Time.timeScale = 1f;
+        Menu.SetActive(false);
 
     }
 

@@ -1,11 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VirusMovement : ExtracellularMovement
 {
     [SerializeField] GameObject hitEffect;
+    private GameObject retry;
 
+    private void Start()
+    {
+        retry = GameObject.Find("Retry");
+    }
+
+
+      
     void OnCollisionEnter(Collision collision)
     {
         //baþka bir objeye deðerse de patlar
@@ -15,9 +24,22 @@ public class VirusMovement : ExtracellularMovement
 
         if(collision.gameObject.tag== "Cell Wall")
         {
-            print("game over");
+            GameOver();
+           
+            
         }
     }
+    private void GameOver()
+    {
+        
+
+        Time.timeScale = 0f;
+        retry.GetComponent<Image>().enabled = true;
+        retry.GetComponentInChildren<Text>().enabled = true;
+    }
+
+
+
 
     private void Effect()
     {
