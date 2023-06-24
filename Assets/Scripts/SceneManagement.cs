@@ -16,31 +16,52 @@ public void playButtonClick()
         LevelsPanel.SetActive(true);
 
     }
-public void playLevel1Button()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
+
+    public void Level1MenuButtonClick()
+    {
+        LevelMenuButtonClick(1);
     }
+    public void Level2MenuButtonClick()
+    {
+        LevelMenuButtonClick(2);
+    }
+    public void Level3MenuButtonClick()
+    {
+        LevelMenuButtonClick(3);
+    }
+    private void LevelMenuButtonClick(int levelIndex)
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - levelIndex);
+    }
+
+
+    public void playLevel1Button()
+    {
+        LevelAvaliable(1);
+    }
+
 public void playLevel2Button()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
-
+        LevelAvaliable(2);
     }
+
 public void playLevel3Button()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
+        LevelAvaliable(3);
 
     }
- public void playLevel4Button()
+    public void NextLevelAvaliable()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 4);
-
+        LevelAvaliable(1);
     }
-    public void playLevel5Button()
+ 
+    private void LevelAvaliable(int levelIndex)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 5);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + levelIndex);
 
     }
+    
     public void QuitButton()
     {
         Application.Quit();

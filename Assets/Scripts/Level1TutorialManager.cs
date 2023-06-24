@@ -18,7 +18,7 @@ public class Level1TutorialManager : MonoBehaviour
     {
         tutorialMessageBox[currentPanelIndex].SetActive(true);
        
-        Time.timeScale = 0f;
+        
 
 
 

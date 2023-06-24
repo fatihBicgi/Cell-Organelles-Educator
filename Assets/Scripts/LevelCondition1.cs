@@ -22,7 +22,7 @@ public class LevelCondition1 : MonoBehaviour
 
     private void BoxController()
     {
-        print("kosenin amina goyum");
+      
         if (LysosomeControl.activeSelf && MitokondriaControl.activeSelf)
         {
 
