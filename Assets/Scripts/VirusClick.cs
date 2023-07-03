@@ -7,22 +7,26 @@ public class VirusClick : MonoBehaviour
 {
     
     private int clickCounter=0;
-
     private int maxClickCount=3;
 
     public static event Action VirusDefeated;   
 
     MitokondriaWork mitokondriaWork;
-
     [SerializeField] int EnergyDecreaseValue=2;
 
     LysosomeWork lysosomeWork;
 
+    [SerializeField] GameObject destroyEffect;
+
+
+    IncreaseTotalProteinCount increaseTotalProteinCount;
+
+
     private void Start()
     {
-        lysosomeWork = FindObjectOfType<LysosomeWork>();
+        increaseTotalProteinCount = FindObjectOfType<IncreaseTotalProteinCount>();
 
-       
+        lysosomeWork = FindObjectOfType<LysosomeWork>();       
 
         mitokondriaWork = FindObjectOfType<MitokondriaWork>();
     }
@@ -38,6 +42,10 @@ public class VirusClick : MonoBehaviour
             if (lysosomeWork.GetCurrentLysosomeCount() > 0)
             {
                 LysosomeWorks();
+
+                increaseTotalProteinCount.IncreaseTotalProtein();
+
+                Effect();
                 Destroy(gameObject);
             }
 
@@ -55,8 +63,14 @@ public class VirusClick : MonoBehaviour
     {
         VirusDefeated?.Invoke();
     }
-    public void DecreaseEnergy(int EnergyValue)
+    private void DecreaseEnergy(int EnergyValue)
     {
         mitokondriaWork.SetCurrentEnergy(EnergyValue);
+    }
+
+    private void Effect()
+    {
+        GameObject effect = Instantiate(destroyEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 1f);
     }
 }

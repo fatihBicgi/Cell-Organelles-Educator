@@ -4,31 +4,47 @@ using UnityEngine;
 
 public class LevelCondition1 : MonoBehaviour
 {
-  
-   
-    public GameObject LysosomeControl;
-    public GameObject MitokondriaControl;
-    public GameObject NextPanel;
+
+    public GameObject ribosomeControl;
+    public GameObject lysosomeControl;
+    public GameObject mitokondriaControl;
+
+
+    public GameObject nextPanel;
+
+
+    private bool isRibosomeWorked=false;
+
+    private void Start()
+    {
+        
+    }
 
     private void OnEnable()
     {
-        PackClickStates.PackCollected += BoxController;
+        VirusClick.VirusDefeated += BoxController;
+
+        RibosomeWork.ribosomeWorked += RobisomeWorkedTrue;
     }
     private void OnDisable()
     {
-        PackClickStates.PackCollected -= BoxController;
-    }
-   
+        VirusClick.VirusDefeated -= BoxController;
 
+        RibosomeWork.ribosomeWorked -= RobisomeWorkedTrue;
+    }
+
+    private void RobisomeWorkedTrue()
+    {
+        isRibosomeWorked = true;
+    }
     private void BoxController()
     {
       
-        if (LysosomeControl.activeSelf && MitokondriaControl.activeSelf)
+        if (ribosomeControl.activeSelf && mitokondriaControl.activeSelf && isRibosomeWorked)
         {
 
-
             Time.timeScale = 0f;
-            NextPanel.SetActive(true);
+            nextPanel.SetActive(true);
 
         }
     }

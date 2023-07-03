@@ -12,8 +12,9 @@ public class RibosomeWork : SpendEnergy
     [SerializeField] private bool isWorking=false;
 
     private int workTime = 4;
-    //tekrar eden þeyler, enerji harcýyorsa ayný þekilde harcýyorlar deðerler bile ayný
-    //bu kod tekrarýndan kurtul
+
+
+    public static event Action ribosomeWorked;
 
 
     void Awake()
@@ -57,8 +58,12 @@ public class RibosomeWork : SpendEnergy
 
         box.SetActive(true);
 
+        ribosomeWorked?.Invoke();
+
         print("ribosom finished working");
         isWorking = false;
+
+
     }
 
     private bool OrganelleWorkConditions()
