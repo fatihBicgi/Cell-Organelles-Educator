@@ -11,10 +11,20 @@ public class Spawn : MonoBehaviour
     private int lastIndex = 0;
 
     private float currentTime = 0f;
-    [SerializeField] private float MaxTime = 3f;
+
+    [SerializeField] private float NormalMaxTime = 3f;
+
+    [SerializeField] private float CurrentMaxTime = 3f;
+
+    private float reducedMaxTime;
 
     void Start()
-    {        
+    {
+
+        CurrentMaxTime = NormalMaxTime;
+
+        reducedMaxTime = NormalMaxTime / 2;
+
         int objectCount = 0;
 
         foreach (Transform child in gameObject.transform)
@@ -28,17 +38,15 @@ public class Spawn : MonoBehaviour
 
     void Update()
     {
-
         currentTime += Time.deltaTime;
 
-        if (MaxTime < currentTime)
+        if (CurrentMaxTime < currentTime)
         {
             currentTime = 0;
 
             SpawnObject();
 
         }
-
         
     }
 
@@ -47,5 +55,14 @@ public class Spawn : MonoBehaviour
         int randomNumber = Random.Range(0, lastIndex);
 
         GameObject foodSpawn = Instantiate(SpawnableObject, spawnPoints[randomNumber].position, spawnPoints[randomNumber].rotation);
+    }
+
+    public void SetNewMaxTime()
+    {
+        CurrentMaxTime = reducedMaxTime;
+    }
+    public void SetNormalMaxTime()
+    {
+        CurrentMaxTime = NormalMaxTime;
     }
 }

@@ -1238,7 +1238,7 @@ Transform:
   - {fileID: 1608586592}
   - {fileID: 1832353329}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &269218070 stripped
 GameObject:
@@ -1682,7 +1682,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnableObject: {fileID: 7337354352329828083, guid: 8d84486780c7bf74da726619f9d238c1, type: 3}
   spawnPoints: []
-  MaxTime: 20
+  NormalMaxTime: 15
+  CurrentMaxTime: 3
 --- !u!4 &396550832
 Transform:
   m_ObjectHideFlags: 0
@@ -2938,7 +2939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47823a30ff59ee847a4010dd5a23c4c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalProtein: 150
+  totalProtein: 175
 --- !u!4 &599855695
 Transform:
   m_ObjectHideFlags: 0
@@ -2966,7 +2967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalProteinDisplayText: {fileID: 239542725}
-  increaseCount: 50
+  increaseCount: 25
 --- !u!1 &626088629
 GameObject:
   m_ObjectHideFlags: 0
@@ -7691,7 +7692,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnableObject: {fileID: 6278690547837638665, guid: 49dde7e112b464e48a4394a75665b840, type: 3}
   spawnPoints: []
-  MaxTime: 20
+  NormalMaxTime: 15
+  CurrentMaxTime: 3
 --- !u!4 &1527379331
 Transform:
   m_ObjectHideFlags: 0
@@ -7708,7 +7710,7 @@ Transform:
   - {fileID: 885504406}
   - {fileID: 760306476}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1561956462
 GameObject:
