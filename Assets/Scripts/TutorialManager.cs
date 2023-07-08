@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour
 {
@@ -18,13 +19,22 @@ public class TutorialManager : MonoBehaviour
     public GameObject spawnLysosome;
     private int currentPanelIndex = 0;
     private int currentLightIndex = 0;
-    
+    private Button ribosomeButtonControl;
+    private Button mitokondriaButtonControl;
+    private Button lysosomeButtonControl;
+    private bool condition;
+    private bool condition1;
+    private bool condition2;
+
     private void Awake()
     {
         tutorialMessageBox[currentPanelIndex].SetActive(true);
         MitokondriaButton.SetActive(false);
         RibosomeButton.SetActive(false);
         LysosomeButton.SetActive(false);
+        ribosomeButtonControl = RibosomeButton.GetComponent<Button>();
+        lysosomeButtonControl = LysosomeButton.GetComponent<Button>();
+        mitokondriaButtonControl = MitokondriaButton.GetComponent<Button>();
         Time.timeScale = 0f;
 
 
@@ -33,6 +43,8 @@ public class TutorialManager : MonoBehaviour
 
     private void Start()
     {
+   
+
     }
 
     private void Update()
@@ -120,7 +132,12 @@ public class TutorialManager : MonoBehaviour
                 tutorialMessageBox[currentPanelIndex].SetActive(false);
                 TutorialPanel.SetActive(false);
                 Time.timeScale = 1f;
+
+                ribosomeButtonControl.interactable = true;
+                lysosomeButtonControl.interactable = true;
+                mitokondriaButtonControl.interactable = true;
                 gameObject.SetActive(false);
+               
             }
         }
 
