@@ -97,6 +97,7 @@ public void playLevel3Button()
     }
     public void Backspace()
     {
+        Time.timeScale = 0f;
         MenuPanel.SetActive(true);
         LevelsPanel.SetActive(false);
     }

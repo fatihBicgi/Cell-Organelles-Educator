@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelCondition1 : MonoBehaviour
 {
     [SerializeField] GameObject ribosomeControl;
+    [SerializeField] GameObject virusCondition;
 
     [SerializeField] GameObject lysosomeControl;
     [SerializeField] GameObject mitokondriaControl;
@@ -77,7 +78,7 @@ public class LevelCondition1 : MonoBehaviour
     {
         if (lysosomeControl.activeSelf && mitokondriaControl.activeSelf && isRibosomeWorked)
         {
-
+            virusCondition.SetActive(true);
             Time.timeScale = 0f;
             nextPanel.SetActive(true);
 
