@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagement : MonoBehaviour
 {
+    public GameObject widget;
     public GameObject MenuPanel;
     public GameObject LevelsPanel;
     public GameObject Menu;
@@ -97,8 +98,21 @@ public void playLevel3Button()
     }
     public void Backspace()
     {
-        Time.timeScale = 0f;
+       
         MenuPanel.SetActive(true);
         LevelsPanel.SetActive(false);
+    }
+    public void Backspace1()
+    {
+         
+        MenuPanel.SetActive(true);
+        widget.SetActive(false);
+    }
+
+    public void Widget()
+    {
+        widget.SetActive(true);
+        MenuPanel.SetActive(false);
+
     }
 }

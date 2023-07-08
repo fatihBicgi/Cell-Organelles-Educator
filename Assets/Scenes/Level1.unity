@@ -3136,7 +3136,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lysosome
+  m_Text: LIZOZOM
 --- !u!222 &659696376
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4004,7 +4004,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Exit
+  m_Text: "\xC7\u0131k\u0131\u015F"
 --- !u!222 &795860030
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6087,7 +6087,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Mitokondria
+  m_Text: MITOKONDRI
 --- !u!222 &1236896584
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6826,7 +6826,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Ribosome
+  m_Text: RIBOZOM
 --- !u!222 &1402392132
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9771,7 +9771,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Resume
+  m_Text: Devam et
 --- !u!222 &1935842003
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9850,7 +9850,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NEXT LEVEL
+  m_Text: "Sonraki B\xF6l\xFCm"
 --- !u!222 &1940789168
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10073,7 +10073,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Menu
+  m_Text: "Men\xFC"
 --- !u!222 &2018873092
 CanvasRenderer:
   m_ObjectHideFlags: 0
